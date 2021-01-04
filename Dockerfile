@@ -1,6 +1,7 @@
 FROM ubuntu:20.04 AS build
 
 ENV DEBIAN_FRONTEND=noninteractive
+ENV LD_LIBRARY_PATH=/usr/local/lib
 
 RUN set -x \
 	&& apt-get update \
@@ -12,7 +13,7 @@ COPY srt-live-server /app/srt-live-server
 
 WORKDIR /app/srt
 
-RUN ./configure && make && make install
+RUN set -x && ./configure && make && make install
 
 WORKDIR /app/srt-live-server
 
