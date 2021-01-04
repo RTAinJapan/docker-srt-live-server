@@ -18,3 +18,9 @@ RUN set -x && ./configure && make && make install
 WORKDIR /app/srt-live-server
 
 RUN make
+
+COPY ./sls.conf ./
+
+EXPOSE 8080/udp
+
+CMD ["/app/srt-live-server/bin/sls", "-c", "/app/srt-live-server/sls.conf"]
