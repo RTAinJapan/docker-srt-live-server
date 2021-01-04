@@ -1,0 +1,6 @@
+[submodule "srt-live-server"]
+	path = srt-live-server
+	url = https://github.com/Edward-Wu/srt-live-server.git
+[submodule "srt"]
+	path = srt
+	url = https://github.com/Haivision/srt.git
